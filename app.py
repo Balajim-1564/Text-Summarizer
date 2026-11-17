@@ -1,11 +1,13 @@
 from datetime import datetime
 from io import BytesIO
+import os
 
 import streamlit as st
 from pypdf import PdfReader
 from pypdf.errors import PdfReadError
 
 #from summarizer import generate_summary
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 from summarizer import summarize_text
 
